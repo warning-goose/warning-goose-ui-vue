@@ -5,10 +5,12 @@ help:
 
 all:
 
-prepare: node_modules
+prepare: prepare-popup
 
-node_modules:
-	npm install
+prepare-popup: popup/node_modules
+
+popup/node_modules:
+	cd popup && npm install
 	
 watch: node_modules watch-popup ## Watch directory for changes & build CSS for development
 
