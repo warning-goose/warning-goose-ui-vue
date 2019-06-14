@@ -1,6 +1,9 @@
 .DS_Store
 node_modules
-/popup/dist
+
+# generated files
+/popup/dist/*
+/web-ext-artifacts/*
 
 # local env files
 .env.local
