@@ -1,7 +1,8 @@
 <template>
   <div>
-    <wg-header />
-      Offensive mode !
+    <wg-header title=""
+               subtitle="" />
+      Offensive
     <wg-footer />
   </div>
 </template>

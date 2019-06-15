@@ -24,5 +24,20 @@ export default {
         footer: {
             action: "Continue"
         }
+    },
+    wassups: {
+        header: {
+            title: "Oh yes, yes, but still!",
+            subtitle: "In what mood does that put you?"
+        },
+        selector: {
+            i_am_wondering: "Hmm... I wonder",
+            i_am_forced_to: "I am being forced",
+            i_am_angry: "I'm angry",
+            i_am_worried_about: "I'm afraid"
+        },
+        footer: {
+            action: "Continue"
+        }
     }
 };

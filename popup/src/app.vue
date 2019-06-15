@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    New active topics = {{ selectedTopics.join(' ') }}
     <router-view/>
   </div>
 </template>
@@ -14,9 +13,9 @@ export default {
     selectedTopics: []
   }),
   mounted () {
-    EventBus.$on("wg-selected-topics", (payload) => {
+    EventBus.$on("wg-topics-selector-update", (selectedTopics) => {
       // console.log("received " + payload)
-      this.selectedTopics = payload
+      this.selectedTopics = selectedTopics
     });
   }
 }

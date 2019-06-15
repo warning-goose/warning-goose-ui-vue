@@ -25,4 +25,19 @@ export default {
             action: "Continuer"
         }
     },
+    wassup: {
+        header: {
+            title: "Ah oui, quand même !",
+            subtitle: "Dans quel état cela te met ?"
+        },
+        selector: {
+            i_am_wondering: "Hmm.. je m'interroge",
+            i_am_forced_to: "On m'oblige",
+            i_am_angry: "Je suis en colère",
+            i_am_worried_about: "J'ai peur"
+        },
+        footer: {
+            action: "Continuer"
+        }
+    }
 };
