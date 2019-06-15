@@ -27,6 +27,7 @@ export default {
     msg: String
   },
   data: () => ({
+    enableAction: false,
     wassups: [
       "i_am_wondering",
       "i_am_forced_to",
@@ -34,6 +35,11 @@ export default {
       "i_am_worried_about",
     ]
   }),
+  methods: {
+    updateAction(selectedTopics) {
+      this.enableAction = (selectedTopics.length > 0)
+    }
+  },
   components: {
     WgHeader,
     WgFooter,

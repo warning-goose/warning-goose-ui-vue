@@ -75,7 +75,7 @@ export default {
     }
   },
   methods: {
-    toggleTopic(ev) {
+    toggleOption(ev) {
       let value = ev.target.value
       let i = this.selectedOptions.indexOf(value)
       if (i === -1) {
