@@ -12,9 +12,10 @@ prepare-popup: popup/node_modules
 popup/node_modules:
 	cd popup && npm install
 	
-watch: node_modules watch-popup ## Watch directory for changes & build CSS for development
 
-watch-popup:
+watch: watch-popup ## Watch directory for changes & build CSS for development
+
+watch-popup: prepare-popup
 	cd popup && npm run serve
 
 
@@ -46,10 +47,16 @@ test-prod: node_modules css-prod js-prod ## Test prod extension in browser
 
 
 build: prepare build-popup ## Build extension for production
-	web-ext build --overwrite-dest
+	# $(MAKE) clean-popup
 
 build-popup:
 	cd popup && npm run build
+
+
+dist: build dist-popup
+	web-ext build --overwrite-dest
+
+dist-popup: clean-popup
 
 .PHONY: extension build test-dev test-prod watch help clean
 

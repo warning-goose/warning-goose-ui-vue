@@ -1,0 +1,21 @@
+// Configuration (before anything else)
+@import "./config";
+@import "./fonts";
+
+// Functions
+// @import "../mixins/action_button";
+@import "./mixins/loader";
+
+// Mobile version (default)
+@import "./layout/common";
+
+@import "./pages/form";
+
+// Desktop version (override)
+@media only screen and (min-width: 768px) {
+	@import "./layout/common_desktop";
+
+	@import "./pages/form_desktop";
+}
+
+
