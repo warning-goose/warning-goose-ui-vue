@@ -90,8 +90,10 @@ export default {
 
 <styles lang="scss" scoped>
 
-@import "../styles/_config.scss";
-@import "../styles/mixins/loader.scss";
+@import "../styles/config";
+@import "../styles/mixins/loader";
+@import "../styles/ext/bootstrap-grid";
+@import "../styles/ext/bootstrap-reboot";
 
 .wg-options-selector {
   .explanation {

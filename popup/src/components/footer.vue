@@ -1,10 +1,12 @@
 <template>
   <div class="wg-footer">
     <div class="form-group">
-      <input v-if="action === 'next'" 
-             type="button" 
-             :value="title" 
-             :disabled="!enabled" />
+      <input  
+         type="button" 
+         :value="title" 
+         :disabled="!enabled" 
+         @click="update"
+         />
     </div>
   </div>
 </template>
@@ -23,6 +25,11 @@ export default {
       type: Boolean,
       default: true
     }
+  },
+  methods: {
+    update() {
+      this.$emit('update')
+    }
   }
 }
 </script>
@@ -30,9 +37,11 @@ export default {
 <style lang="scss" scoped>
 
 @import "../styles/config";
+@import "../styles/mixins/loader";
+@import "../styles/ext/bootstrap-grid";
+@import "../styles/ext/bootstrap-reboot";
 
 .wg-footer {
-  margin-top: 20px;
 
   .form-group {
     input[type=submit],
@@ -43,6 +52,10 @@ export default {
       color: white;
       flex-grow: 1;
       margin-top: 40px;
+      margin-bottom: 40px;
+      width: 100%;
+      border-radius: 5px;
+      outline: 0;
 
       &[disabled] {
         background-color: $color_red_disabled;
