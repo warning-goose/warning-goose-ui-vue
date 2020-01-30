@@ -1,7 +1,8 @@
 <template>
-  <div>
-    <wg-header :title="$t('wassups.header.title')"
-               :subtitle="$t('wassups.header.subtitle')"/>
+  <div class="wg-page-wassups">
+    <wg-header 
+      :title="$t('wassups.header.title')"
+      :subtitle="$t('wassups.header.subtitle')"/>
     <wg-options-selector 
       mode="radio" 
       i18n-prefix="wassups.selector"
@@ -9,10 +10,12 @@
       @update="updateAction" 
       :options="wassups" 
       />
-    <wg-footer action="next" 
-               :enabled="enableAction"
-               :title="$t('wassups.footer.action')"
-               />
+    <wg-footer 
+      action="next" 
+      @update="goToNextPage" 
+      :enabled="enableAction"
+      :title="$t('wassups.footer.action')"
+      />
   </div>
 </template>
 
@@ -38,6 +41,9 @@ export default {
   methods: {
     updateAction(selectedTopics) {
       this.enableAction = (selectedTopics.length > 0)
+    },
+    goToNextPage() {
+      this.$router.push('offensive')
     }
   },
   components: {

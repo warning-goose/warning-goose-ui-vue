@@ -4,12 +4,12 @@
        :title="$t('topics.header.title')"
        :subtitle="$t('topics.header.subtitle')"/>
     <wg-options-selector 
-       mode="radio" 
+       mode="checkbox" 
        i18n-prefix="topics.selector"
-       @update="updateAction" 
+       @update="updateSelectedTopics" 
        :options="topics" />
     <wg-footer 
-       action="next" 
+       @update="goToNextPage" 
        :enabled="enableAction"
        :title="$t('topics.footer.action')"
        />
@@ -48,8 +48,11 @@ export default {
 
   }),
   methods: {
-    updateAction(selectedTopics) {
+    updateSelectedTopics(selectedTopics) {
       this.enableAction = (selectedTopics.length > 0)
+    },
+    goToNextPage() {
+      this.$router.push('wassup')
     }
   },
   components: {

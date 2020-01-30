@@ -1,21 +1,16 @@
 <template>
-  <div class="wg-page-offensive">
+  <div class="wg-page-human">
     <wg-header 
-      :title="$t('offensive.header.title')"
-      :subtitle="$t('offensive.header.subtitle')"/>
+      :title="$t('human.header.title')"
+      :subtitle="$t('human.header.subtitle')"/>
 
-    <wg-options-selector 
-      mode="radio" 
-      i18n-prefix="offensive.selector"
-      shuffle
-      @update="updateAction" 
-      :options="offensive" 
-      />
+      HUMAN PROOF
+
     <wg-footer 
       action="next" 
       @update="goToNextPage" 
       :enabled="enableAction"
-      :title="$t('offensive.footer.action')"
+      :title="$t('human.footer.action')"
       />
   </div>
 </template>
@@ -25,7 +20,7 @@ import WgHeader from '@/components/header.vue'
 import WgFooter from '@/components/footer.vue'
 
 export default {
-  name: 'wg-page-offensive',
+  name: 'wg-page-human',
   props: {
     msg: String
   },
@@ -35,7 +30,7 @@ export default {
   },
   methods: {
     goToNextPage() {
-      this.$router.push('human')
+      this.$router.push('finish')
     }
   }
 }
