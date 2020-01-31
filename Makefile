@@ -11,13 +11,11 @@ prepare-popup: popup/node_modules
 
 popup/node_modules:
 	cd popup && npm install
-	
 
 watch: watch-popup ## Watch directory for changes & build CSS for development
 
 watch-popup: prepare-popup
 	cd popup && npm run serve
-
 
 clean: clean-popup clean-artifacts ## Clean temporary files & artifacts
 
@@ -26,7 +24,6 @@ clean-popup:
 
 clean-artifacts:
 	rm -f web-ext-artifacts/*.zip
-
 
 help: ## Show this help
 	@echo "Usage: make <target>"
@@ -39,10 +36,13 @@ help: ## Show this help
   	  }' $(MAKEFILE_LIST)
 
 
-test-dev: node_modules css-dev js-dev ## Test dev extension in browser
+js-dev:
+	#
+
+test-dev: popup/node_modules js-dev ## Test dev extension in browser
 	web-ext run --verbose --browser-console
 
-test-prod: node_modules css-prod js-prod ## Test prod extension in browser
+test-prod: popup/node_modules js-prod ## Test prod extension in browser
 	web-ext run --verbose --browser-console
 
 
