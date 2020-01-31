@@ -1,0 +1,13 @@
+{
+  "name": "warning-goose",
+  "version": "1.1.1",
+  "description": "Warning Goose - Crowdsourced Privacy Alert",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Warning Goose",
+  "license": "LGPL-3"
+}
